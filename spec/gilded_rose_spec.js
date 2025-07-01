@@ -86,6 +86,15 @@ it("should drop Quality to 0 for Backstage passes after SellIn < 0", function() 
   expect(items[0].quality).toEqual(0);
 });
 
+// === Conjured Items ===
+
+it("should degrade Quality by 2 for Conjured items before sell date", function() {
+  items = [ new Item("Conjured Mana Cake", 3, 6) ];
+  update_quality();
+  expect(items[0].sell_in).toEqual(2);
+  expect(items[0].quality).toEqual(4); // 6 - 2
+});
+
 //==============================================================
 
 });
