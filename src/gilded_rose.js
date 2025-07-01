@@ -18,7 +18,7 @@ function update_quality() {
     if (items[i].name != 'Aged Brie' && items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
       if (items[i].quality > 0) {
         if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
-          items[i].quality = items[i].quality - 1
+          items[i].quality = items[i].quality - (items[i].name.includes("Conjured") ? 2 : 1);
         }
       }
     } else {
@@ -46,7 +46,7 @@ function update_quality() {
         if (items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
           if (items[i].quality > 0) {
             if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
-              items[i].quality = items[i].quality - 1
+              items[i].quality = items[i].quality - (items[i].name.includes("Conjured") ? 2 : 1);
             }
           }
         } else {
