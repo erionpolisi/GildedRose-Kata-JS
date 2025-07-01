@@ -14,5 +14,10 @@ it("should decrease Quality by 2 when SellIn is below 0 for normal items", funct
   expect(items[0].quality).toEqual(8);
 });
 
+it("should not decrease Quality below 0", function() {
+  items = [ new Item("Elixir of the Mongoose", 5, 0) ];
+  update_quality();
+  expect(items[0].quality).toEqual(0);
+});
 
 });
