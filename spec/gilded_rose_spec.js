@@ -27,4 +27,12 @@ it("should increase Quality of Aged Brie as it gets older", function() {
   expect(items[0].quality).toEqual(1);
 });
 
+it("should increase Quality of Aged Brie by 2 after sell date", function() {
+  items = [ new Item("Aged Brie", 0, 40) ];
+  update_quality();
+  expect(items[0].sell_in).toEqual(-1);
+  expect(items[0].quality).toEqual(42);
+});
+
+
 });
