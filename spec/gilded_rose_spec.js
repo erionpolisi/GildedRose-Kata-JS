@@ -20,4 +20,11 @@ it("should not decrease Quality below 0", function() {
   expect(items[0].quality).toEqual(0);
 });
 
+it("should increase Quality of Aged Brie as it gets older", function() {
+  items = [ new Item("Aged Brie", 2, 0) ];
+  update_quality();
+  expect(items[0].sell_in).toEqual(1);
+  expect(items[0].quality).toEqual(1);
+});
+
 });
