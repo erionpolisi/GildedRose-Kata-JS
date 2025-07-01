@@ -1,9 +1,10 @@
 describe("Gilded Rose", function() {
 
-  it("should foo", function() {
-    items = [ new Item("foo", 0, 0) ];
-    update_quality();
-    expect(items[0].name).toEqual("fixme");
-  });
+  it("should decrease SellIn and Quality by 1 for normal items", function() {
+  items = [ new Item("Elixir of the Mongoose", 5, 7) ];
+  update_quality();
+  expect(items[0].sell_in).toEqual(4);
+  expect(items[0].quality).toEqual(6);
+});
 
 });
