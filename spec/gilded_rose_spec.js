@@ -68,4 +68,11 @@ it("should increase Quality by 3 for Backstage passes when SellIn ≤ 5", functi
   expect(items[0].quality).toEqual(33);
 });
 
+it("should drop Quality to 0 for Backstage passes after SellIn < 0", function() {
+  items = [ new Item("Backstage passes to a TAFKAL80ETC concert", 0, 40) ];
+  update_quality();
+  expect(items[0].sell_in).toEqual(-1);
+  expect(items[0].quality).toEqual(0);
+});
+
 });
